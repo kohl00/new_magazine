@@ -1,0 +1,18 @@
+ <div class="row">
+      <div class="col-md-3 text-right">
+        <img src= '/assets/icon_<%= breaking_headlines.category %>.png'/>
+      </div>
+
+      <div class="col-md-8">
+        <p><%= link_to breaking_headlines.title, article_path(breaking_headlines) %></p>
+        <p class="byline"><%= breaking_headlines.author %> // <%= breaking_headlines.created_at.to_date %></p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <hr>
+      </div>
+    </div>
+
+

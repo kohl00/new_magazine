@@ -70,13 +70,31 @@
     }
   }
 
+  .category-list.music .category-music{
+    border-bottom: 15px solid blue;
+  }
+   .category-list.tech .category-tech{
+    border-bottom: 15px solid #50cfaa;
+  }
+   .category-list.finance .category-finance{
+    border-bottom: 15px solid green;
+  }
+   .category-list.culture .category-culture{
+    border-bottom: 15px solid red;
+  }
+   .category-list.art .category-art{
+    border-bottom: 15px solid purple;
+  }
+   .category-list.food .category-food{
+    border-bottom: 15px solid yellow;
+  }
   .category-list {
     .category-item {
 
       height: 120px;
       text-align: center;
 
-      &.active {
+     /* &.active {
 
         border-bottom-width: 15px;
         border-bottom-style: solid;
@@ -99,7 +117,7 @@
         &.category-culture {
           border-bottom-color: red;
         }
-      }
+      } */
 
       a {
         padding-top: 30px;
@@ -153,7 +171,7 @@
     margin-top: 25px;
 
 
-    &.tech, &.culture {
+    &.tech, &.culture, &.food, &.finance, &.music, &.art {
       background-repeat: no-repeat;
       background-size: 30px 30px;
       padding-left: 45px;
@@ -161,6 +179,10 @@
 
     &.tech    { background-image: image-url( "badge_tech.png" );    }
     &.culture { background-image: image-url( "badge_culture.png" ); }
+    &.art { background-image: image-url( "badge_art.png" ); }
+    &.finance { background-image: image-url( "badge_finance.png" ); }
+    &.food { background-image: image-url( "badge_food.png" ); }
+    &.music { background-image: image-url( "badge_music.png" ); }
   }
 
   .article_row {
@@ -213,7 +235,7 @@
       }
     }
 
-    .about_author {
+    /*.about_author {
       background: #50cfaa;
       color: white;
 
@@ -224,12 +246,96 @@
           padding-right: 10px;
           background: white;
           color: #50cfaa;
-          text-transform: uppercase;
-        }
-      }
-    }
+          text-transform: uppercase;*/
+        //}
+      //}
+    //}
   }
 
+   .about_author.music {
+      background:blue;
+      color:white;
+      h1{
+        margin-top:0px;
+        span{
+          background:white;
+          color:blue;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+       }
+      }
+      .about_author.art {
+      background:purple;
+      color:white;
+      h1{
+        margin-top:0px;
+        span{
+          background:white;
+          color:purple;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+       }
+      }
+      .about_author.finance{
+      background:green;
+      color:white;
+      h1{
+        margin-top:0px;
+        span{
+          background:white;
+          color:green;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+       }
+      }
+      .about_author.food {
+      background:yellow;
+      color:white;
+      h1{
+        margin-top:0px;
+        span{
+          background:white;
+          color:yellow;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+       }
+      }
+      .about_author.tech {
+      background:#50cfaa;
+      color:white;
+      h1{
+        margin-top:0px;
+        span{
+          background:white;
+          color:#50cfaa;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+       }
+      }
+      .about_author.culture {
+      background:red;
+      color:white;
+      h1{
+        margin-top:0px;
+        span{
+          background:white;
+          color:red;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+       }
+      }
   .article-divider {
     margin-left: 15px;
     margin-right: 15px;
@@ -331,6 +437,9 @@
       height: 25px;
     }
   }
+}
 
-
+.error-messages{
+  color:white;
+  background:red;
 }

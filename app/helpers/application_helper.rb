@@ -21,3 +21,4 @@ module ApplicationHelper
     @title || controller_name.gsub( /Controller/, "" ).humanize
   end
 end
+

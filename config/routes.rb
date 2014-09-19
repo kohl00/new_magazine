@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'photos/new'
+
+  get 'photos/edit'
+
+  get 'photos/create'
+
+  get 'photos/destory'
+
  resources :articles 
+
+ get 'category/:category' => 'articles#category', :as => :category 
+  
 
   get 'static/category'
 
@@ -15,6 +26,8 @@ Rails.application.routes.draw do
   get 'static/profile'
 
   root 'articles#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

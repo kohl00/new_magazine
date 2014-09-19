@@ -1,32 +1,31 @@
 <div class="row category_nav">
-  <div class="col-md-2 logo"><img src="<%= image_url "daft_logo.png" %>" class="img-responsive"/></div>
-
+  <div class="col-md-2 logo"><%= link_to image_tag('daft_logo.png'), root_path %></div>
   <div class="col-md-8 col-md-offset-1">
     
-    <div class="row category-list">
+    <div class="row category-list <%= @category %>">
 
       <div class="col-md-2 category-item active category-tech">
-        <a href="#"><img src="<%= image_url "nav_tech.png" %>" class="img-responsive"/></a>
+        <%=link_to image_tag("nav_tech.png", class: "img-responsive"),category_path(:tech) %>
       </div>
       
       <div class="col-md-2 category-item category-finance">
-        <a href="#"><img src="<%= image_url "nav_finance.png" %>" class="img-responsive"/></a>
+        <%=link_to image_tag("nav_finance.png", class: "img-responsive"),category_path(:finance) %>
       </div>
       
       <div class="col-md-2 category-item category-art">
-        <a href="#"><img src="<%= image_url "nav_art.png" %>" class="img-responsive"/></a>
+        <%=link_to image_tag("nav_art.png", class: "img-responsive"),category_path(:art) %>
       </div>
       
       <div class="col-md-2 category-item category-music">
-        <a href="#"><img src="<%= image_url "nav_music.png" %>" class="img-responsive"/></a>
+        <%=link_to image_tag("nav_music.png", class: "img-responsive"),category_path(:music) %>
       </div>
       
       <div class="col-md-2 category-item category-food">
-        <a href="#"><img src="<%= image_url "nav_food.png" %>" class="img-responsive"/></a>
+        <%=link_to image_tag("nav_food.png", class: "img-responsive"),category_path(:food) %>
       </div>
       
       <div class="col-md-2 category-item category-culture">
-        <a href="#"><img src="<%= image_url "nav_culture.png" %>" class="img-responsive"/></a>
+       <%=link_to image_tag("nav_culture.png", class: "img-responsive"),category_path(:culture) %>
       </div>
       
     </div>
