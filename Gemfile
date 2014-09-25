@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+gem 'will_paginate-bootstrap'
+
 gem "paperclip", "~> 4.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -38,7 +41,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
+gem 'hirb', :group => :development
 gem "httparty"
 group :development, :test do
   gem "sqlite3"

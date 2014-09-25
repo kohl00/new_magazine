@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   	@article=Article.find(params[:id])
 
     @category=@article.category
-  	
+
   end
 
   def new
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def index
 
-    @articles=Article.all.order(created_at: :desc).limit(5)
+    @articles=Article.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
   end
 
   def edit
@@ -36,6 +36,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article=Article.create(article_params)
+    @article.user_id = session[:user_id]
     if @article.save
         flash[:success] = "You have successfully created an article."
         redirect_to article_path(@article)
@@ -62,6 +63,7 @@ class ArticlesController < ApplicationController
 
   def set_breaking_news
     @breaking_articles = Article.all.order('created_at desc').limit(5);
+   
     #@category=params[:category]
   end
 end

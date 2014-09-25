@@ -39,7 +39,7 @@
 
           <h1>Title:<%=@article.title %></h1>
 
-          <p class="byline">BY <%= @article.author %></p>
+          <p class="byline">BY <%= @article.user.first_name %></p>
 
           <%= simple_format(@article.content) %>
 
