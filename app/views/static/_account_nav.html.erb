@@ -27,30 +27,30 @@
   <div class="col-md-6 col-md-offset-2">
     <!--<form class="form-inline pull-right">-->
       <% if is_signed_in? %>
-        <%= link_to 'My Profile', root_path %>
-        <%= link_to 'Sign Out', sessions_path, method: :delete %>
-        <%= link_to 'Create Article', new_article_path %>
+        <%= button_to 'My Profile',root_path, class: 'my-profile-btn' %>
+        <%= button_to 'Sign Out', sessions_path, class: 'sign-out-btn', method: :delete %>
+        <%= button_to 'Create Article', new_article_path, class: 'create-article-btn'  %>
       <% else %>
-    <%= form_tag sessions_path, class: 'form-inline pull-right' do %>
-      <%=link_to "Create Article", new_article_path, class: 'form-inline' %>
-      <!--<input type="text" name="username" placeholder="Username" class="form-control" autocomplete="off"/>-->
-      <%= email_field_tag(:email, 'Email',class: 'form-control') %>
+          <%= form_tag sessions_path, class: 'form-inline pull-right' do %>
+            <%=link_to "Create Article", new_article_path, class: 'form-inline' %>
+            <!--<input type="text" name="username" placeholder="Username" class="form-control" autocomplete="off"/>-->
+            <%= email_field_tag(:email, 'Email',class: 'form-control') %>
 
-      <div class="input-group">
-       <!-- <input type="password" name="password" placeholder="Password" class="form-control" autocomplete="off"/>-->
-        <%= password_field_tag(:password,'Password', class: 'form-control') %> 
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="circle">
-              ?
-            </span>
-          </button>
-        </span>
-      </div>
-      <%= submit_tag 'Sign In', class: 'btn btn-primary' %>
-      <!--<input type="submit" value="sign in" class="btn btn-primary"/>-->
-    <% end %>
+            <div class="input-group">
+             <!-- <input type="password" name="password" placeholder="Password" class="form-control" autocomplete="off"/>-->
+              <%= password_field_tag(:password,'Password', class: 'form-control') %> 
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <span class="circle">
+                    ?
+                  </span>
+                </button>
+              </span>
+            </div>
+            <%= submit_tag 'Sign In', class: 'btn btn-primary' %>
+                <!--<input type="submit" value="sign in" class="btn btn-primary"/>-->
+           <% end %>
     <!--</form>-->
-    <% end %>
+      <% end %>
   </div>
 </div> <!-- Account Nav -->

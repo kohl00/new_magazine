@@ -3,13 +3,23 @@
     <img src="<%= image_url "daft_logo_footer.png" %>">
 
     <h2>Join our mailing list for Daft News!</h2>
-    <form class="form-inline">
-      <input type="text" name="username" placeholder="Username" class="form-control"/>
-      <input type="password" name="password" placeholder="Password" class="form-control"/>
-      <input type="submit" value="sign in" class="btn btn-primary"/>
-    </form>
+
+      <%= form_tag mailing_list_sign_up_path, remote: true, :class => 'form-inline' do %>
+        <%= text_field_tag :name, '', placeholder: 'Name', class: 'form-control' %>
+        <%= email_field_tag :email, '', placeholder: 'Email...', class: 'form-control' %>
+        <%= submit_tag 'Sign Up', class: 'btn btn-primary mailing-list-btn' %>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+
+    <div class="modal-content">
+      <h1><%= @name %> Thanks for signing up!</h1>
+    </div>
+  </div>
+</div>
+
+      <% end %>
 
 
     <p>Copyright 2014, all rights reserved</p>
-  </div>
-</div>
+ 

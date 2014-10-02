@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'mailing_list/sign_up'
+
   get 'photos/new'
 
   get 'photos/edit'
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   resource :sessions
+
+  post 'mailing-list/sign_up'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
