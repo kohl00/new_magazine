@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
  before_action :set_breaking_news, :only => [:show,:category]
 
+
   def show
   	@article=Article.find(params[:id])
 
@@ -9,24 +10,36 @@ class ArticlesController < ApplicationController
   end
 
   def new
-  	@article=Article.new
+    if is_signed_in?
 
-    4.times do
-      @article.photos.build
+  	   @article=current_user.articles.new
+
+      4.times do
+        @article.photos.build
+      end
+
+    else
+      
+      redirect_to root_path
     end
+
   end
 
   def index
 
     @articles=Article.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
+    @carousel_article=Article.all.order(created_at: :desc).limit(3)
+    #@carousel_article=Article.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
+    @user=current_user
   end
 
   def edit
-    @article=Article.find(params[:id])
+    @article=current_user.articles.find(params[:id])
   end
 
   def update
-    @article=Article.find(params[:id])
+    @article=current_user.articles.find(params[:id])
+    
       if @article.update(article_params)
         redirect_to article_path(@article)
       else
@@ -35,8 +48,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article=Article.create(article_params)
-    @article.user_id = session[:user_id]
+
+    @article = current_user.articles.new( article_params)
+    #@article.user_id = session[:user_id]
     if @article.save
         flash[:success] = "You have successfully created an article."
         redirect_to article_path(@article)
@@ -58,7 +72,8 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-  	params.require(:article).permit(:title,:author,:content,:category, photos_attributes: [:name, :id])
+  	params.require(:article).permit(:title,:author,:content,:category, photos_attributes: [:name, :id, :image, :_destroy])
+
   end
 
   def set_breaking_news

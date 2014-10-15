@@ -1,0 +1,29 @@
+<div class='asdfg'>
+  <%= form_for @user, remote: true do |f| %>
+    <div class="col-md-4 col-md-offset-0 text-center">
+      <%#= image_tag @user.avatar.url(:thumb) %>
+      <div class="update-avatar">
+        <%= f.label :avatar do %>
+          <img src="http://placehold.it/100x100" class="img-responsive avatar"/>
+          <%= f.file_field :avatar, :class=>"img-responsive avatar-filefield" %>
+        <%end%>      
+      </div>
+      <div class="update-fields">
+        <%= f.label :first_name, 'First Name:' %>
+        <%= f.text_field :first_name %></br>
+        <%= f.label :last_name, 'Last Name:' %>
+        <%= f.text_field :last_name %></br>
+        <%= f.label :email,"Email:", :class=>'email-field' %>
+        <%= f.email_field :email %>
+      </div>
+
+      <div class='update-bio-btn'> 
+        <%= f.submit "Update"%>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <h1><%= f.label :bio, 'My Biography' %><img src="<%= image_url "edit_pencil.png" %>" class="pencil"></h1>
+      <%= f.text_area :bio, cols: 77 %>
+    </div>
+  <% end %>
+</div>

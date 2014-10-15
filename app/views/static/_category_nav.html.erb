@@ -1,38 +1,38 @@
 <div class="row category_nav">
-  <div class="col-md-2 logo"><%= link_to image_tag('daft_logo.png'), root_path %></div>
-  <div class="col-md-8 col-md-offset-1">
-    
-    <div class="row category-list <%= @category %>">
-
-      <div class="col-md-2 category-item category-tech">
-        <%=link_to image_tag("nav_tech.png", class: "img-responsive"),category_path(:tech) %>
-      </div>
-      
-      <div class="col-md-2 category-item category-finance">
-        <%=link_to image_tag("nav_finance.png", class: "img-responsive"),category_path(:finance) %>
-      </div>
-      
-      <div class="col-md-2 category-item category-art">
-        <%=link_to image_tag("nav_art.png", class: "img-responsive"),category_path(:art) %>
-      </div>
-      
-      <div class="col-md-2 category-item category-music">
-        <%=link_to image_tag("nav_music.png", class: "img-responsive"),category_path(:music) %>
-      </div>
-      
-      <div class="col-md-2 category-item category-food">
-        <%=link_to image_tag("nav_food.png", class: "img-responsive"),category_path(:food) %>
-      </div>
-      
-      <div class="col-md-2 category-item category-culture">
-       <%=link_to image_tag("nav_culture.png", class: "img-responsive"),category_path(:culture) %>
-      </div>
-      
-    </div>
-    
-
+  <div class="col-md-2 logo">
+      <%= link_to image_tag('daft_logo.png'), root_path %>
   </div>
 
+  <div class="col-md-8 col-md-offset-1">
+    
+      <div class="row category-list <%= @category %>">
+
+        <div class="col-md-2 category-item category-tech">
+          <%=link_to image_tag("nav_tech.png", class: "img-responsive"),category_path(:tech) %>
+        </div>
+        
+        <div class="col-md-2 category-item category-finance">
+          <%=link_to image_tag("nav_finance.png", class: "img-responsive"),category_path(:finance) %>
+        </div>
+        
+        <div class="col-md-2 category-item category-art">
+          <%=link_to image_tag("nav_art.png", class: "img-responsive"),category_path(:art) %>
+        </div>
+        
+        <div class="col-md-2 category-item category-music">
+          <%=link_to image_tag("nav_music.png", class: "img-responsive"),category_path(:music) %>
+        </div>
+        
+        <div class="col-md-2 category-item category-food">
+          <%=link_to image_tag("nav_food.png", class: "img-responsive"),category_path(:food) %>
+        </div>
+        
+        <div class="col-md-2 category-item category-culture">
+         <%=link_to image_tag("nav_culture.png", class: "img-responsive"),category_path(:culture) %>
+        </div>
+      </div>
+  </div>
 </div> <!-- category_nav -->
 
-<div class="category-nav-stripes row"></div>
+<div class="category-nav-stripes row">
+</div>

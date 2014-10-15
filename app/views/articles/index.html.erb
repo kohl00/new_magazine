@@ -1,22 +1,33 @@
-<div class="container-fluid text-center">
+<div class="container-fluid index-container">
 
 
   <%= render "static/account_nav" %>
 
   <%= render "static/category_nav" %>
 
-  <div class="row homepage_nav">
-    <div class="col-xs-2 control">
-      <img src="<%= image_url "left_carousel.png" %>" class="img-responsive">
+  <div id="owl-demo" class="owl-carousel owl-theme">
+   
+    <div class="item content">
+      <h1 class="carousel-title">
+        <%= @carousel_article.first.title %>
+      </h1>
+        <%#= image_tag Photo.find_by(@carousel_article.last.photos).image.url(:full), :class=>'img-responsive' %>
+        <%= image_tag @carousel_article.first.photos.first.image.url(:full), :class=>'img-responsive' %>
     </div>
-
-    <div class="col-xs-8">
-      <img src="<%= image_url "chair_carousel.png" %>" class="img-responsive">
+    <div class="item conent">
+        <h1 class="carousel-title">
+           <%= @carousel_article.second.title %>
+        </h1>
+         <%#= image_tag Photo.find_by(@carousel_article.next.photos).image.url(:full), :class=>'img-responsive' %>
+         <%= image_tag @carousel_article.second.photos.first.image.url(:full), :class=>'img-responsive' %>
     </div>
-
-    <div class="col-xs-2 control">
-      <img src="<%= image_url "right_carousel.png" %>" class="img-responsive">
-    </div>    
+    <div class="item content">
+      <img src="assets/fullimage3.jpg" alt="Mirror Edge">
+    </div>
+    <div class="item content">
+      <img src="assets/fullimage4.jpg" alt="Mirror Edge">
+    </div>
+   
   </div>
 
   <div class="row">
@@ -28,7 +39,11 @@
       <% @articles.each do |latest|%>
         <div class="row homepage_article text-left">
           <div class="col-md-3">
-            <img src="http://placehold.it/400x300" class="img-responsive">
+            <% if latest.photos.present? %>
+              <%= image_tag latest.photos.first.image.url(:medium),:class => 'img-responsive' %>
+            <% else %>
+              <img src="http://placehold.it/400x300" class="img-responsive">
+            <% end %>
           </div>
           <div class="col-md-9">
             <h2 class="title"><%= latest.title %></h2>

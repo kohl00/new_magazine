@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   post 'mailing_list/sign_up'
 
   get 'photos/new'
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'static/article'
 
-  get 'static/edit'
+  get 'static/edit_profile'
 
   get 'static/subscribe'
 

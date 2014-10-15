@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-
+gem 'owlcarousel-rails'
+gem 'aws-sdk'
+gem 'cocoon'
 gem 'will_paginate-bootstrap'
 
 gem "paperclip", "~> 4.2"

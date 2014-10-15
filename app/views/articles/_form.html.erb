@@ -4,22 +4,12 @@
         <div class="col-md-7 col-md-offset-1">
           <div class="form-group">
             <label>Photos</label>
-            <div class="row photo-uploads">
-              <%= f.fields_for :photos do |p| %>
-                <div class="col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-body">
-                      <%=p.label :image do %>
-                        <img src="<%=image_url('add_photo_icon.png')%>" class="photo-placeholder">
-                        Photo 1
-                        <%=p.hidden_field :id %>
-                        <%=p.file_field :image %>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
+            <div class="row photo-uploads" id="photos">
+              <%= f.fields_for :photos do |pho| %>
+                <%= render 'photo_fields', :f => pho %>
               <% end %>
             </div>
+              <%= link_to_add_association 'add photo', f, :photos %>
           </div>
 
             <% if @article.errors.messages[:title].present? %>

@@ -8,7 +8,11 @@
   <% @category_articles.each do |article| %>
     <div class="row article_row">
       <div class="col-md-3 col-md-offset-1">
-        <img src="http://placehold.it/500x500" class="img-responsive"/>
+        <% if article.photos.present? %>
+          <%= image_tag article.photos.first.image.url(:thumb),:class => 'img-responsive' %>
+        <% else %>
+          <img src="http://placehold.it/500x500" class="img-responsive"/>
+        <% end %>
       </div>
       <div class="col-md-7">
       	<h2><%= link_to article.title, article_path(article) %></h2>

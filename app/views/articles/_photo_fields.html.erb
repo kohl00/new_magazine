@@ -1,0 +1,15 @@
+
+<div class="col-md-3 nested-fields">
+  <div class="panel panel-default text-center">
+    <div class="panel-body">
+      <%= f.label :image do %>
+        <img src="<%=image_url('add_photo_icon.png')%>" class="photo-placeholder">
+        <%= image_tag f.object.image.url, :class=>'photo-placeholder' if f.object.image? %>
+        Photo 1
+        <%= f.hidden_field :id %>
+        <%= f.file_field :image %>
+      <% end %>
+    </div>
+    	<%= link_to_remove_association 'remove photo', f%>
+  </div>
+</div>

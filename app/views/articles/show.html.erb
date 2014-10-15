@@ -9,34 +9,34 @@
 
       <% if @article.new_record? %>
        <div class="<%= flash_class(:success) %>">"Elegant!"</div>
-       <% end %>
+      <% end %>
 
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="row">
             <div class="col-md-12">
-              <img src="http://placehold.it/1000x700" class="img-responsive"/>
+                <% if @article.photos.present? %>
+                   <%= image_tag @article.photos.first.image.url(:full), :class=>'img-responsive' %>
+                <% else %>
+                   <%= image_tag('http://placehold.it/350x200') %>
+                 <% end %>
             </div>
           </div>
 
-          <div class="row thumbnailrow">
-            <div class="col-xs-3">
-              <img src="http://placehold.it/300x150" class="img-responsive"/>
+          <% if @article.photos.exists? %>
+            <div class="row thumbnailrow">
+              <% @article.photos.each do |x| %>
+              <div class="col-xs-3">
+                <!--<img src="http://placehold.it/300x150" class="img-responsive"/>-->
+                <%= image_tag x.image.url(:full), :class=> "img-responsive" %>
+              </div>
+              <% end %>
             </div>
-            <div class="col-xs-3">
-              <img src="http://placehold.it/300x150" class="img-responsive"/>
-            </div>
-            <div class="col-xs-3">
-              <img src="http://placehold.it/300x150" class="img-responsive"/>
-            </div>
-            <div class="col-xs-3">
-              <img src="http://placehold.it/300x150" class="img-responsive"/>
-            </div>
-          </div>
-  
+          <% end %>
+          <% if is_signed_in? %>
           <%= link_to "Edit", edit_article_path(@article) %>
           <%=link_to "Delete", article_path(@article), :method=>:delete, data: { confirm: "Are you sure?" },class: "pull-right" %>
-
+          <% end%>
           <h1>Title:<%=@article.title %></h1>
 
           <p class="byline">BY <%= @article.user.first_name %></p>

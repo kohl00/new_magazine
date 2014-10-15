@@ -1,10 +1,41 @@
 //-----------------------------------------
 // Variables, customize bootstrap here
 //-----------------------------------------
+/*
+*= require owl.carousel
+*= require owl.theme
+*/
+
 @import 'variables';
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+#owl-demo .item img{
+    display: block;
+    width: 60%;
+    height: auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.item .content{
+  background:black;
+}
+.owl-wrapper-outer{
+  height:600px;
+  background:black;
+}
+.owl-wrapper .grabbing{
+  height:600px;
+}
+.carousel-title{
+  display:inline-block;
+  position:relative;
+  left:35%;
+  top:500px;
+  color:white;
+  background:black;
+}
 
 .outline {
   border: 1px solid black;
@@ -60,6 +91,13 @@
       font-weight: bold;
     }
   }
+}
+
+.my-profile-btn, .create-article-btn, .sign-out-btn{
+height:35px;
+background:$brand-primary;
+color:white;
+
 }
 
 .category_nav {
@@ -390,6 +428,12 @@
 
   .underline {
     border-bottom: 1px solid gray;
+    margin-left:0px;
+    margin-right:0px;
+  }
+
+  h1.underline{
+    font-weight:400;
   }
 
   h2 {
@@ -454,10 +498,13 @@ img.profile-backing{
 }
 
 img.profile-avatar{
-        position:relative;
-        right:55px;
+        position:absolute;
+        right:104px;
         top:10px;
         border-radius:100%;
+        z-index: 10000;
+        width:40px;
+        height:40px;
 }
 
 .welcome-profile-page{
@@ -465,9 +512,43 @@ img.profile-avatar{
             right:75px;
             font-size:10px;
             color:white;
+            text-align:left;
 }
 
+.signed-in-nav{
+  padding:0px;
+}
 .modal-content{
   color: $brand-primary;
 }
 
+
+.text-center{
+  margin-left:50px;
+}
+
+.index-container{
+  
+}
+
+.update-avatar{
+  .avatar-filefield{
+    display:none;
+  }
+}
+.update-fields{
+  text-align: center;
+    .email-field{
+      padding-left:35px;
+    }
+}
+.article-edit{
+  padding-right:0px;
+}
+.profile-stories{
+  margin-top:30px;
+}
+.update-bio-btn{
+  margin-top:10px;
+  margin-bottom:10px;
+}

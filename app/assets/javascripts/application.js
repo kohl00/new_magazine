@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require cocoon
+//= require owl.carousel
+
+$(document).ready(function(){   
+	$(".owl-carousel").owlCarousel({
+		navigation:  true,
+		slideSpeed: 300,
+		paginationSpeed: 400,
+		singleItem: true
+	});
+});
