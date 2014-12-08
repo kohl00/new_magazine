@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
  before_action :set_breaking_news, :only => [:show,:category]
-
+ before_action :carousel_articles, :only => :index
 
   def show
   	@article=Article.find(params[:id])
@@ -75,6 +75,10 @@ class ArticlesController < ApplicationController
   	params.require(:article).permit(:title,:author,:content,:category, photos_attributes: [:name, :id, :image, :_destroy])
 
   end
+
+  def carousel_articles
+     @carousel_article=Article.all.order(created_at: :desc).limit(3)
+   end
 
   def set_breaking_news
     @breaking_articles = Article.all.order('created_at desc').limit(5);

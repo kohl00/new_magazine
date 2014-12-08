@@ -9,23 +9,17 @@
    
     <div class="item content">
       <h1 class="carousel-title">
-        <%= @carousel_article.first.try(:title) %>
+        <%= @carousel_article.first.title %>
       </h1>
         <%#= image_tag Photo.find_by(@carousel_article.last.photos).image.url(:full), :class=>'img-responsive' %>
-        <%= image_tag @carousel_article.first.photos.first.image.url(:full), :class=>'img-responsive' %>
+        <%= image_tag @carousel_article.first.try(:photos).first.image.url(:full), :class=>'img-responsive' %>
     </div>
-    <div class="item conent">
+    <div class="item content">
         <h1 class="carousel-title">
            <%= @carousel_article.second.title %>
         </h1>
          <%#= image_tag Photo.find_by(@carousel_article.next.photos).image.url(:full), :class=>'img-responsive' %>
-         <%= image_tag @carousel_article.second.photos.first.image.url(:full), :class=>'img-responsive' %>
-    </div>
-    <div class="item content">
-      <img src="assets/fullimage3.jpg" alt="Mirror Edge">
-    </div>
-    <div class="item content">
-      <img src="assets/fullimage4.jpg" alt="Mirror Edge">
+         <%= image_tag @carousel_article.second.try(:photos).first.image.url(:full), :class=>'img-responsive' %>
     </div>
    
   </div>
