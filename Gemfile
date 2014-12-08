@@ -4,6 +4,7 @@ gem 'owlcarousel-rails'
 gem 'aws-sdk'
 gem 'cocoon'
 gem 'will_paginate-bootstrap'
+gem 'faker'
 
 gem "paperclip", "~> 4.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
