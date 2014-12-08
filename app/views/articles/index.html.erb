@@ -5,25 +5,6 @@
 
   <%= render "static/category_nav" %>
 
-  <div id="owl-demo" class="owl-carousel owl-theme">
-   
-    <div class="item content">
-      <h1 class="carousel-title">
-        <%= @carousel_article.first.title %>
-      </h1>
-        <%#= image_tag Photo.find_by(@carousel_article.last.photos).image.url(:full), :class=>'img-responsive' %>
-        <%= image_tag @carousel_article.first.try(:photos).first.image.url(:full), :class=>'img-responsive' %>
-    </div>
-    <div class="item content">
-        <h1 class="carousel-title">
-           <%= @carousel_article.second.title %>
-        </h1>
-         <%#= image_tag Photo.find_by(@carousel_article.next.photos).image.url(:full), :class=>'img-responsive' %>
-         <%= image_tag @carousel_article.second.try(:photos).first.image.url(:full), :class=>'img-responsive' %>
-    </div>
-   
-  </div>
-
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h1>Latest Articles</h1>
