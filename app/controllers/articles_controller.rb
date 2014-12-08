@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
 
   def category
     @category= params[:category] 
-    @category_articles= Article.all.where(:category => params[:category]).order(created_at: :desc).limit(6)
+    @category_articles= Article.all.where(:category => params[:category]).recent
   end
 
   private

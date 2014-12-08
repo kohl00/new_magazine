@@ -14,6 +14,8 @@ class Article < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :photos, reject_if: proc { |attributes| attributes['image'].blank?} 
 
+	scope :recent, -> { order(created_at: :desc).limit(6) }
+
 	def author
 		if user.present?
 			[user.first_name, user.last_name].reject(&:blank?).join(' ')
