@@ -1,11 +1,10 @@
 class ArticlesController < ApplicationController
  before_action :set_breaking_news, :only => [:show,:category]
- before_action :carousel_articles, :only => :index
 
   def show
   	@article=Article.find(params[:id])
 
-    @category=@article.category
+    @category=@article.category.downcase
 
   end
 
@@ -28,8 +27,6 @@ class ArticlesController < ApplicationController
   def index
 
     @articles=Article.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
-    @carousel_article=Article.all.order(created_at: :desc).limit(3)
-    #@carousel_article=Article.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
     @user=current_user
   end
 
@@ -76,13 +73,12 @@ class ArticlesController < ApplicationController
 
   end
 
-  def carousel_articles
-     @carousel_article=Article.all.order(created_at: :desc).limit(3)
-   end
+  #def carousel_articles
+     #@carousel_article=Article.all.order(created_at: :desc).limit(3)
+  # end
 
   def set_breaking_news
     @breaking_articles = Article.all.order('created_at desc').limit(5);
-   
-    #@category=params[:category]
+    
   end
 end

@@ -37,7 +37,7 @@
           <%= link_to "Edit", edit_article_path(@article) %>
           <%=link_to "Delete", article_path(@article), :method=>:delete, data: { confirm: "Are you sure?" },class: "pull-right" %>
           <% end%>
-          <h1>Title:<%=@article.title %></h1>
+          <h1>Title:<%=@article.ntitle %></h1>
 
           <p class="byline">BY <%= @article.user.first_name %></p>
 
@@ -45,13 +45,13 @@
 
         </div>
       </div>
-      <div class="row about_author <%= @article.category %>">
+      <div class="row about_author <%= @category %>">
         <div class="col-md-10 col-md-offset-1">
           <h1><span>About author</span></h1>
         </div>
       </div>
 
-      <div class="row about_author <%= @article.category %>">
+      <div class="row about_author <%= @category %>">
         <div class="col-md-1">
           <img src="http://placehold.it/100x100" class="img-responsive avatar"/>
         </div>

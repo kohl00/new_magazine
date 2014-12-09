@@ -15,7 +15,7 @@
 end
 
 users = User.order(:created_at)
-category = ["Tech","Finance","Art","Music","Food","Culture"]
+category = ["tech","finance","art","music","food","culture"]
 10.times do
   title = (Faker::Lorem.words(4)).to_s
   random_cat = category.shuffle.first 
