@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   	@article=Article.find(params[:id])
 
     @category=@article.category.downcase
+    @author = User.find(@article.user_id)
 
   end
 

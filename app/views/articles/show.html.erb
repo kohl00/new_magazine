@@ -53,8 +53,7 @@
 
       <div class="row about_author <%= @category %>">
         <div class="col-md-1">
-          <img src="http://placehold.it/100x100" class="img-responsive avatar"/>
-          <%= @article.author %>
+          <%= image_tag @author.avatar.url(:thumb), class: "img-responsive avatar" %>
         </div>
         <div class="col-md-10">
           <p>
