@@ -15,6 +15,5 @@
 /log/*.log
 /tmp
 
-/magazine/.env
 .env
-/env
+/.env
