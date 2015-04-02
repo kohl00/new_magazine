@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-before_action :abc, :only=> [:update,:edit]
+skip_before_filter :verify_authenticity_token
+
+before_action :abc, :only=>[:edit]
 
   def new
   end
@@ -15,9 +17,10 @@ before_action :abc, :only=> [:update,:edit]
   end
 
   def update
-  	@user=current_user
+    @user = User.find(session[:user_id])
   	@user.update(user_params)
     @user.save
+    
   end
 
 private

@@ -27,9 +27,9 @@ class Article < ActiveRecord::Base
 		end
 	end
 
-   def ntitle
-   		self.title.gsub(/"/," ")
-   end
+   def title
+    read_attribute(:title).to_s.gsub(?", " ")
+  end
 
    def downcase_category
    	  self.category = category.downcase

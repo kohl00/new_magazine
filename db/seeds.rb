@@ -17,7 +17,7 @@ end
 users = User.order(:created_at)
 category = ["tech","finance","art","music","food","culture"]
 10.times do
-  title = (Faker::Lorem.words(4)).to_s
+  title = Faker::Lorem.sentence(5)
   random_cat = category.shuffle.first 
-  users.each {|user| user.articles.create!(title: title, content: (Faker::Lorem.paragraphs(3)).to_s, category: random_cat)}
+  users.each {|user| user.articles.create!(title: title, content: Faker::Lorem.paragraphs(3).join(), category: random_cat)}
 end

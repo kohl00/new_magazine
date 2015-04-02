@@ -41,7 +41,7 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
   :storage => :s3,
-  :path => "/#{ENV['S3_PATH_PREFIX']}/:class/:attachment/:id_partition/:style/:filename",
+  #:path => "/#{ENV['S3_PATH_PREFIX']}/:class/:attachment/:id_partition/:style/:filename",
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME']
   },

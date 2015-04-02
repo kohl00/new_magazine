@@ -37,9 +37,9 @@
           <%= link_to "Edit", edit_article_path(@article) %>
           <%=link_to "Delete", article_path(@article), :method=>:delete, data: { confirm: "Are you sure?" },class: "pull-right" %>
           <% end%>
-          <h1>Title:<%=@article.ntitle %></h1>
+          <h1>Title:<%=@article.title %></h1>
 
-          <p class="byline">BY <%= @article.user.first_name %></p>
+          <p class="byline">By: <%="#{@article.author}"%></p>
 
           <%= simple_format(@article.content) %>
 

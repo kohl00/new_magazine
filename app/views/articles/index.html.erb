@@ -21,8 +21,8 @@
             <% end %>
           </div>
           <div class="col-md-9">
-            <h2 class="title"><%= link_to latest.ntitle, article_path(latest) %></h2>
-            <p class="byline"><%= latest.author %></p>
+            <h2 class="title"><%= link_to latest.title, article_path(latest) %></h2>
+            <p class="byline">by: <%= latest.author %></p>
             <p class="summary"><%= latest.content.split(/\s+/)[0..100].join(' ') %></p>
           </div>
         </div>
